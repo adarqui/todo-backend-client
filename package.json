@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "a TodoMVC client which uses a TodoBackend implementation to store its todos.",
   "scripts": {
+    "preinstall": "npm i -g grunt-cli bower nw node-webkit-builder",
     "prepublish": "grunt",
     "build": "grunt",
-    "start": "open index.html"
+    "start": "open index.html",
+    "native": "nwbuild . -o ../todo-backend-client.native"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,11 @@
     "grunt": "^0.4.5",
     "grunt-bowercopy": "^1.2.0",
     "grunt-contrib-clean": "^0.6.0"
+  },
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "width": 800,
+    "height": 600
   }
 }
